@@ -1,11 +1,11 @@
 package net.burlibu.mccourse.item;
 
 import net.burlibu.mccourse.MCCourseMod;
+import net.burlibu.mccourse.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
@@ -29,11 +29,16 @@ public class ModCreativeModeTabs {
     public static final Supplier<CreativeModeTab> BLACK_OPAL_BLOCKS_TAB =
             CREATIVE_MODE_TABS.register("black_opal_blocks_tab", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.mccourse.black_opal_blocks_tab"))
-                    .icon(() -> new ItemStack(ModItems.RAW_BLACK_OPAL.get()))
+                    .icon(() -> new ItemStack(ModBlocks.BLACK_OPAL_BLOCK.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID,"black_opal_items_tab"))
                     .displayItems((pParameters, output) -> {
-                        output.accept(Blocks.ANDESITE);
+                        output.accept(ModBlocks.BLACK_OPAL_BLOCK);
+                        output.accept(ModBlocks.RAW_BLACK_OPAL_BLOCK);
                         output.accept(Blocks.DEEPSLATE_DIAMOND_ORE);
+                        output.accept(ModBlocks.BLACK_OPAL_ORE);
+                        output.accept(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE);
+                        output.accept(ModBlocks.BLACK_OPAL_NETHER_ORE);
+                        output.accept(ModBlocks.BLACK_OPAL_END_ORE);
                     })
                     .build());
 
