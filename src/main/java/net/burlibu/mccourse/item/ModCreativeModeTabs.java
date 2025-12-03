@@ -24,6 +24,7 @@ public class ModCreativeModeTabs {
                     .displayItems((pParameters, output) -> {
                         output.accept(ModItems.BLACK_OPAL);
                         output.accept(ModItems.RAW_BLACK_OPAL);
+                        output.accept(ModItems.CHAINSAW);
                     })
                     .build());
     public static final Supplier<CreativeModeTab> BLACK_OPAL_BLOCKS_TAB =
