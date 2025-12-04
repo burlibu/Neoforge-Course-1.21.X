@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MCCourseMod.MOD_ID);
-
+    // ======================= ITEMS TAB ======================================================
     public static final Supplier<CreativeModeTab> BLACK_OPAL_ITEMS_TAB =
             CREATIVE_MODE_TABS.register("black_opal_items_tab", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.mccourse.black_opal_items_tab"))
@@ -25,8 +25,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BLACK_OPAL);
                         output.accept(ModItems.RAW_BLACK_OPAL);
                         output.accept(ModItems.CHAINSAW);
+                        output.accept(ModItems.TOMATO);
+                        output.accept(ModItems.FROSTFIRE_ICE);
                     })
                     .build());
+    //================================================================================================
+
+
+    //================================= BLOCKS TAB ===================================================================
     public static final Supplier<CreativeModeTab> BLACK_OPAL_BLOCKS_TAB =
             CREATIVE_MODE_TABS.register("black_opal_blocks_tab", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.mccourse.black_opal_blocks_tab"))
@@ -40,9 +46,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE);
                         output.accept(ModBlocks.BLACK_OPAL_NETHER_ORE);
                         output.accept(ModBlocks.BLACK_OPAL_END_ORE);
+                        output.accept(ModBlocks.MAGIC_BLOCK);
                     })
                     .build());
-
+    //======================================================================================================
     public static void register(IEventBus eventbus){
         CREATIVE_MODE_TABS.register(eventbus);
     }

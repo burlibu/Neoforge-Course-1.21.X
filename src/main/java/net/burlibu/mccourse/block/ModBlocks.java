@@ -1,6 +1,7 @@
 package net.burlibu.mccourse.block;
 
 import net.burlibu.mccourse.MCCourseMod;
+import net.burlibu.mccourse.block.customs.MagicBlock;
 import net.burlibu.mccourse.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -36,7 +37,9 @@ public class ModBlocks {
     // BLACK_OPAL_END_ORE
     public static final DeferredBlock<Block> BLACK_OPAL_END_ORE = registerBlock("black_opal_end_ore",
             () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
-    
+    //
+    public static final DeferredBlock<Block> MAGIC_BLOCK = registerBlock("magic_block",
+            () -> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
     // Helper
     private static <T extends Block>DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name,block);
