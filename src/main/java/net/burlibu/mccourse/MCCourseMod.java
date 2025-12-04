@@ -37,7 +37,7 @@ public class MCCourseMod {
     public MCCourseMod(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
+        
         ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
