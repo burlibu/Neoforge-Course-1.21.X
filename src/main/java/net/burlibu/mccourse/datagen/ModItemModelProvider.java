@@ -34,6 +34,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.BLACK_OPAL_SHOVEL);
         handheldItem(ModItems.BLACK_OPAL_AXE);
         handheldItem(ModItems.BLACK_OPAL_HOE);
+        handheldItem(ModItems.BLACK_OPAL_PAXEL);
+        handheldItem(ModItems.BLACK_OPAL_HAMMER);
     }
 
     public void buttonItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
