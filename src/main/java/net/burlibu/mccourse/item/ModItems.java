@@ -4,9 +4,7 @@ import net.burlibu.mccourse.MCCourseMod;
 import net.burlibu.mccourse.item.custom.Chainsawitem;
 import net.burlibu.mccourse.item.custom.FuelItem;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -30,7 +28,21 @@ public class ModItems {
         }
     }, new Item.Properties().food(ModFoodProperties.TOMATO));
     public static final DeferredItem<Item> FROSTFIRE_ICE = ITEMS.registerItem("frostfire_ice", properties -> new FuelItem(properties,800),new Item.Properties().food(ModFoodProperties.TOMATO));
-
+    public static final DeferredItem<Item> BLACK_OPAL_SWORD = ITEMS.register("black_opal_sword",
+            () -> new SwordItem(ModToolTiers.BLACK_OPAL,
+                    new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.BLACK_OPAL, 3, -2.4f))));
+    public static final DeferredItem<Item> BLACK_OPAL_PICKAXE = ITEMS.register("black_opal_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.BLACK_OPAL,
+                    new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.BLACK_OPAL, 1, -2.8f))));
+    public static final DeferredItem<Item> BLACK_OPAL_SHOVEL = ITEMS.register("black_opal_shovel",
+            () -> new ShovelItem(ModToolTiers.BLACK_OPAL,
+                    new Item.Properties().attributes(ShovelItem.createAttributes(ModToolTiers.BLACK_OPAL, 1.5f, -3.0f))));
+    public static final DeferredItem<Item> BLACK_OPAL_AXE = ITEMS.register("black_opal_axe",
+            () -> new AxeItem(ModToolTiers.BLACK_OPAL,
+                    new Item.Properties().attributes(AxeItem.createAttributes(ModToolTiers.BLACK_OPAL, 6, -3.2f))));
+    public static final DeferredItem<Item> BLACK_OPAL_HOE = ITEMS.register("black_opal_hoe",
+            () -> new HoeItem(ModToolTiers.BLACK_OPAL,
+                    new Item.Properties().attributes(HoeItem.createAttributes(ModToolTiers.BLACK_OPAL, 0, -3.0f))));
     public static void register(IEventBus eventbus){
         ITEMS.register(eventbus);
     }

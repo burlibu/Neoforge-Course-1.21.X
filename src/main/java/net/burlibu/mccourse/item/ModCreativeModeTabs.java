@@ -27,6 +27,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHAINSAW);
                         output.accept(ModItems.TOMATO);
                         output.accept(ModItems.FROSTFIRE_ICE);
+                        output.accept(ModItems.BLACK_OPAL_SWORD);
+                        output.accept(ModItems.BLACK_OPAL_PICKAXE);
+                        output.accept(ModItems.BLACK_OPAL_AXE);
+                        output.accept(ModItems.BLACK_OPAL_SHOVEL);
+                        output.accept(ModItems.BLACK_OPAL_HOE);
+
 
                     })
                     .build());

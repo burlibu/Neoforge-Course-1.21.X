@@ -5,6 +5,12 @@
   "item.mccourse.tomato": "Tomato",
   "item.mccourse.frostfire_ice": "Frostfire Ice",
 
+  "item.mccourse.black_opal_sword": "Black Opal Sword",
+  "item.mccourse.black_opal_pickaxe": "Black Opal Pickaxe",
+  "item.mccourse.black_opal_shovel": "Black Opal Shovel",
+  "item.mccourse.black_opal_axe": "Black Opal Axe",
+  "item.mccourse.black_opal_hoe": "Black Opal Hoe",
+
 
   "block.mccourse.black_opal_block": "Black Opal Block",
   "block.mccourse.raw_black_opal_block": "Raw Black Opal Block",
