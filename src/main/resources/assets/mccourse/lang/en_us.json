@@ -18,7 +18,8 @@
   "item.mccourse.black_opal_boots": "Black Opal Boots",
   "item.mccourse.black_opal_horse_armor": "Black Horse Armor",
   "item.mccourse.burlibu_armor_trim_smithing_template": "Burlibu Trim Template",
-
+  "item.mccourse.metal_detector": "Metal Detector",
+  "item.mccourse.data_tablet": "Data Tablet",
 
   "block.mccourse.black_opal_block": "Black Opal Block",
   "block.mccourse.raw_black_opal_block": "Raw Black Opal Block",
@@ -48,5 +49,6 @@
   "tooltip.mccourse.chainsaw.tooltip.2": "§oChainsaw go vroom!§r",
 
   "tooltip.mccourse.magic_block.tooltip.1": "This Block is §9MAGICAL§r",
-  "tooltip.mccourse.tomato.1": "Tomato; Tomato"
+  "tooltip.mccourse.tomato.1": "Tomato; Tomato",
+  "item.mccourse.metal_detector.no_valuables": "No Valuables Found!"
 }

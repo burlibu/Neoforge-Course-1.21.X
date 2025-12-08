@@ -4,6 +4,7 @@ import net.burlibu.mccourse.MCCourseMod;
 import net.burlibu.mccourse.block.custom.BlackOpalLampBlock;
 import net.burlibu.mccourse.block.custom.MagicBlock;
 import net.burlibu.mccourse.item.ModItems;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -38,7 +39,7 @@ public class ModBlocks {
             () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
     // BLACK_OPAL_END_ORE
     public static final DeferredBlock<Block> BLACK_OPAL_END_ORE = registerBlock("black_opal_end_ore",
-            () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
+            () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().friction(2.0f).sound(SoundType.ANVIL)));
     //
     public static final DeferredBlock<Block> MAGIC_BLOCK = registerBlock("magic_block",
             () -> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noLootTable()));

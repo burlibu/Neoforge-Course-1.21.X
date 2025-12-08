@@ -67,7 +67,10 @@ public class ModItems {
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(16))));
     public static final DeferredItem<Item> BLACK_OPAL_HORSE_ARMOR = ITEMS.register("black_opal_horse_armor",
             () -> new AnimalArmorItem(ModArmorMaterials.BLACK_OPAL, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
-
+    public static final DeferredItem<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
+            () -> new MetalDetectorItem(new Item.Properties().durability(100)));
+    public static final DeferredItem<Item> DATA_TABLET = ITEMS.register("data_tablet",
+            () -> new DataTabletItem(new Item.Properties().stacksTo(1)));
     // Smithing template
     public static final DeferredItem<Item> BURLIBU_SMITHING_TEMPLATE = ITEMS.register("burlibu_armor_trim_smithing_template",
             () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID, "burlibu")));

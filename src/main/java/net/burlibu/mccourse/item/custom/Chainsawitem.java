@@ -1,5 +1,6 @@
 package net.burlibu.mccourse.item.custom;
 
+import net.burlibu.mccourse.component.ModDataComponentTypes;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -29,6 +30,9 @@ public class Chainsawitem extends Item {
                 level.destroyBlock(pContext.getClickedPos(), true, pContext.getPlayer());
                 pContext.getItemInHand().hurtAndBreak(1,((ServerLevel) level),((ServerPlayer) pContext.getPlayer()),
                 item -> Objects.requireNonNull(pContext.getPlayer()).onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+
+                pContext.getItemInHand().set(ModDataComponentTypes.COORDINATES, pContext.getClickedPos());
+
             }
         }
         return InteractionResult.CONSUME;
@@ -41,6 +45,9 @@ public class Chainsawitem extends Item {
             tooltipComponents.add(Component.translatable("tooltip.mccourse.chainsaw.tooltip.2"));
         } else {
             tooltipComponents.add(Component.translatable("tooltip.mccourse.chainsaw.tooltip.shift"));
+        }
+        if(stack.get(ModDataComponentTypes.COORDINATES) != null) {
+            tooltipComponents.add(Component.literal("Last Tree was chopped at " + stack.get(ModDataComponentTypes.COORDINATES)));
         }
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
