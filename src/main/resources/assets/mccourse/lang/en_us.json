@@ -17,6 +17,7 @@
   "item.mccourse.black_opal_leggings": "Black Opal Leggings",
   "item.mccourse.black_opal_boots": "Black Opal Boots",
   "item.mccourse.black_opal_horse_armor": "Black Horse Armor",
+  "item.mccourse.burlibu_armor_trim_smithing_template": "Burlibu Trim Template",
 
 
   "block.mccourse.black_opal_block": "Black Opal Block",
@@ -36,6 +37,9 @@
 
   "itemGroup.mccourse.black_opal_items_tab": "Black Opal Items",
   "itemGroup.mccourse.black_opal_blocks_tab": "Black Opal Blocks",
+
+  "trim_pattern.mccourse.burlibu": "Burlibu Armor Trim",
+  "trim_material.mccourse.black_opal": "Black Opal Material",
 
 
   "tooltip.mccourse.chainsaw.tooltip.shift": "Press §eShift§r for more Information!",

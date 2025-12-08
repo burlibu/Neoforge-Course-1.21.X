@@ -3,6 +3,7 @@ package net.burlibu.mccourse.item;
 import net.burlibu.mccourse.MCCourseMod;
 import net.burlibu.mccourse.item.custom.*;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
@@ -66,6 +67,10 @@ public class ModItems {
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(16))));
     public static final DeferredItem<Item> BLACK_OPAL_HORSE_ARMOR = ITEMS.register("black_opal_horse_armor",
             () -> new AnimalArmorItem(ModArmorMaterials.BLACK_OPAL, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
+
+    // Smithing template
+    public static final DeferredItem<Item> BURLIBU_SMITHING_TEMPLATE = ITEMS.register("burlibu_armor_trim_smithing_template",
+            () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID, "burlibu")));
     // =============================================== EVENT BUS ==================================================
     public static void register(IEventBus eventbus) {
         ITEMS.register(eventbus);

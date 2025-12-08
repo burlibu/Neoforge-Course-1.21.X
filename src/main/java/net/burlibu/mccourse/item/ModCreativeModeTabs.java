@@ -39,6 +39,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BLACK_OPAL_LEGGINGS);
                         output.accept(ModItems.BLACK_OPAL_BOOTS);
                         output.accept(ModItems.BLACK_OPAL_HORSE_ARMOR);
+                        output.accept(ModItems.BURLIBU_SMITHING_TEMPLATE);
 
 
                     })

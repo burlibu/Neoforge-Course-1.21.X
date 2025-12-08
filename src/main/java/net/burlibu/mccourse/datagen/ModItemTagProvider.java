@@ -32,5 +32,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.BLACK_OPAL_CHESTPLATE.get())
                 .add(ModItems.BLACK_OPAL_LEGGINGS.get())
                 .add(ModItems.BLACK_OPAL_BOOTS.get());
+        this.tag(ItemTags.TRIM_MATERIALS)
+                .add(ModItems.BLACK_OPAL.get());
+
+        this.tag(ItemTags.TRIM_TEMPLATES)
+                .add(ModItems.BURLIBU_SMITHING_TEMPLATE.get());
     }
 }
