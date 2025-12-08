@@ -23,7 +23,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected ModBlockLootTableProvider(HolderLookup.Provider provider) {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags(), provider);
     }
-
+    // ======================================================================================================================
+    // ======================================================================================================================
+    // ======================================================================================================================
     @Override
     protected void generate() {
         dropSelf(ModBlocks.BLACK_OPAL_BLOCK.get());
@@ -49,8 +51,13 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.BLACK_OPAL_TRAPDOOR.get());
         this.add(ModBlocks.BLACK_OPAL_DOOR.get(),
                 block -> createDoorTable(ModBlocks.BLACK_OPAL_DOOR.get()));
+        dropSelf(ModBlocks.BLACK_OPAL_LAMP.get());
     }
 
+
+    // ======================================================================================================================
+    // ======================================================================================================================
+    // ======================================================================================================================
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         return this.createSilkTouchDispatchTable(pBlock, this.applyExplosionDecay(pBlock,

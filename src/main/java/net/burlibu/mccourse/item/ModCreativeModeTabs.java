@@ -71,6 +71,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BLACK_OPAL_WALL);
                         output.accept(ModBlocks.BLACK_OPAL_DOOR);
                         output.accept(ModBlocks.BLACK_OPAL_TRAPDOOR);
+                        output.accept(ModBlocks.BLACK_OPAL_LAMP);
+
                     })
                     .build());
     //======================================================================================================

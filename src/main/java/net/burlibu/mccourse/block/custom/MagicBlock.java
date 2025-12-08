@@ -1,4 +1,4 @@
-package net.burlibu.mccourse.block.customs;
+package net.burlibu.mccourse.block.custom;
 
 import net.burlibu.mccourse.item.ModItems;
 import net.burlibu.mccourse.util.ModTags;

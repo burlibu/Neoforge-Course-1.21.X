@@ -1,7 +1,8 @@
 package net.burlibu.mccourse.block;
 
 import net.burlibu.mccourse.MCCourseMod;
-import net.burlibu.mccourse.block.customs.MagicBlock;
+import net.burlibu.mccourse.block.custom.BlackOpalLampBlock;
+import net.burlibu.mccourse.block.custom.MagicBlock;
 import net.burlibu.mccourse.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -63,6 +64,10 @@ public class ModBlocks {
             () -> new DoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noOcclusion()));
     public static final DeferredBlock<Block> BLACK_OPAL_TRAPDOOR = registerBlock("black_opal_trapdoor",
             () -> new TrapDoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noOcclusion()));
+
+    public static final DeferredBlock<Block> BLACK_OPAL_LAMP = registerBlock("black_opal_lamp",
+            () -> new BlackOpalLampBlock(BlockBehaviour.Properties.of().strength(3f)
+                    .requiresCorrectToolForDrops().lightLevel(state -> state.getValue(BlackOpalLampBlock.CLICKED) ? 15 : 0)));
     //===================================== HELPER FUNCS ================================================
     // Helper
     private static <T extends Block>DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
