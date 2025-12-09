@@ -40,7 +40,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BLACK_OPAL_BOOTS);
                         output.accept(ModItems.BLACK_OPAL_HORSE_ARMOR);
                         output.accept(ModItems.BURLIBU_SMITHING_TEMPLATE);
-
+                        output.accept(ModItems.METAL_DETECTOR);
+                        output.accept(ModItems.DATA_TABLET);
+                        output.accept(ModItems.BURLI_BOW);
 
                     })
                     .build());
@@ -72,8 +74,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BLACK_OPAL_DOOR);
                         output.accept(ModBlocks.BLACK_OPAL_TRAPDOOR);
                         output.accept(ModBlocks.BLACK_OPAL_LAMP);
-                        output.accept(ModItems.METAL_DETECTOR);
-                        output.accept(ModItems.DATA_TABLET);
+
                     })
                     .build());
     //======================================================================================================

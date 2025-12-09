@@ -1,0 +1,6 @@
+{
+  "parent": "mccourse:item/burli_bow",
+  "textures": {
+    "layer0": "mccourse:item/burli_bow_pulling_2"
+  }
+}

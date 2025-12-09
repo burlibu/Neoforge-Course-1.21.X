@@ -50,6 +50,8 @@ public class ModItems {
     public static final DeferredItem<Item> BLACK_OPAL_HAMMER = ITEMS.register("black_opal_hammer",
             () -> new HammerItem(ModToolTiers.BLACK_OPAL,
                     new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.BLACK_OPAL, 8, -3.3f))));
+    public static final DeferredItem<Item> BURLI_BOW = ITEMS.register("burli_bow",
+            () -> new BowItem(new Item.Properties().durability(500)));
     // =========================================================================================================================================
     // ========================================================== ARMOR ========================================================================
     // =========================================================================================================================================
