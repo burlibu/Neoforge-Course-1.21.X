@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mccourse:item/data_tablet"
+  }
+}

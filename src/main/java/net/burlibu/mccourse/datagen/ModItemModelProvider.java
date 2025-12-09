@@ -67,7 +67,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.BURLIBU_SMITHING_TEMPLATE.get());
 
         basicItem(ModItems.METAL_DETECTOR.get());
-        basicItem(ModItems.DATA_TABLET.get());
+        //basicItem(ModItems.DATA_TABLET.get());
     }
 
     // Shoutout to El_Redstoniano for making this

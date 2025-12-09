@@ -5,6 +5,7 @@ import net.burlibu.mccourse.component.ModDataComponentTypes;
 import net.burlibu.mccourse.item.ModArmorMaterials;
 import net.burlibu.mccourse.item.ModCreativeModeTabs;
 import net.burlibu.mccourse.item.ModItems;
+import net.burlibu.mccourse.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -95,6 +96,7 @@ public class MCCourseMod {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }
