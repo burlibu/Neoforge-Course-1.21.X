@@ -4,6 +4,7 @@
   "item.mccourse.chainsaw": "Chainsaw",
   "item.mccourse.tomato": "Tomato",
   "item.mccourse.frostfire_ice": "Frostfire Ice",
+  "item.mccourse.tomato_seeds": "Tomato Seeds",
 
   "item.mccourse.black_opal_sword": "Black Opal Sword",
   "item.mccourse.burli_bow": "burliBow",
@@ -37,6 +38,9 @@
   "block.mccourse.black_opal_door": "Black Opal Door",
   "block.mccourse.black_opal_trapdoor": "Black Opal Trapdoor",
   "block.mccourse.black_opal_lamp": "Black Opal Lamp",
+
+  "block.mccourse.tomato_crop": "Tomato Crop",
+
 
   "itemGroup.mccourse.black_opal_items_tab": "Black Opal Items",
   "itemGroup.mccourse.black_opal_blocks_tab": "Black Opal Blocks",

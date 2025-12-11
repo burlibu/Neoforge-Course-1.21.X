@@ -43,6 +43,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.METAL_DETECTOR);
                         output.accept(ModItems.DATA_TABLET);
                         output.accept(ModItems.BURLI_BOW);
+                        output.accept(ModItems.TOMATO_SEEDS);
 
                     })
                     .build());

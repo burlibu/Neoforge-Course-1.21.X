@@ -1,6 +1,7 @@
 package net.burlibu.mccourse.item;
 
 import net.burlibu.mccourse.MCCourseMod;
+import net.burlibu.mccourse.block.ModBlocks;
 import net.burlibu.mccourse.item.custom.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -52,6 +53,13 @@ public class ModItems {
                     new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.BLACK_OPAL, 8, -3.3f))));
     public static final DeferredItem<Item> BURLI_BOW = ITEMS.register("burli_bow",
             () -> new BowItem(new Item.Properties().durability(500)));
+
+    public static final DeferredItem<Item> TOMATO_SEEDS = ITEMS.register("tomato_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.TOMATO_CROP.get(), new Item.Properties()));
+
+
+
+
     // =========================================================================================================================================
     // ========================================================== ARMOR ========================================================================
     // =========================================================================================================================================
