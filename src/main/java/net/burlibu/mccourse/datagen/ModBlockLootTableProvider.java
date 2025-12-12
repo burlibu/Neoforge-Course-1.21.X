@@ -64,6 +64,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 ModItems.TOMATO.get(), ModItems.TOMATO_SEEDS.asItem(), lootItemConditionBuilder));
         this.dropSelf(ModBlocks.PETUNIA.get());
         this.add(ModBlocks.POTTED_PETUNIA.get(), createPotFlowerItemTable(ModBlocks.PETUNIA));
+        dropSelf(ModBlocks.COLORED_LEAVES.get());
     }
 
 

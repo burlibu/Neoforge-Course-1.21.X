@@ -45,6 +45,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BURLI_BOW);
                         output.accept(ModItems.TOMATO_SEEDS);
                         output.accept(ModBlocks.PETUNIA);
+                        output.accept(ModBlocks.COLORED_LEAVES);
 
                     })
                     .build());
