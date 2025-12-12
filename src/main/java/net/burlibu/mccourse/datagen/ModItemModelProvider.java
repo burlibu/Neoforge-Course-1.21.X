@@ -69,8 +69,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.METAL_DETECTOR.get());
 
         basicItem(ModItems.TOMATO_SEEDS.get());
+        flowerItem(ModBlocks.PETUNIA);
     }
-
+    public void flowerItem(DeferredBlock<Block> block) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0",  ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID,
+                        "block/" + block.getId().getPath()));
+    }
     // Shoutout to El_Redstoniano for making this
     private void trimmedArmorItem(DeferredItem<Item> itemDeferredItem) {
         final String MOD_ID = MCCourseMod.MOD_ID; // Change this to your mod id
