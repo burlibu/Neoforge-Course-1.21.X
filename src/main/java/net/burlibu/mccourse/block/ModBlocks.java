@@ -5,6 +5,7 @@ import net.burlibu.mccourse.block.custom.BlackOpalLampBlock;
 import net.burlibu.mccourse.block.custom.MagicBlock;
 import net.burlibu.mccourse.block.custom.TomatoCropBlock;
 import net.burlibu.mccourse.item.ModItems;
+import net.burlibu.mccourse.sound.ModSounds;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
@@ -32,19 +33,19 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
     // BLACK_OPAL_ORE
     public static final DeferredBlock<Block> BLACK_OPAL_ORE = registerBlock("black_opal_ore",
-            () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
+            () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().sound(SoundType.SPORE_BLOSSOM)));
     // BLACK_OPAL_DEEPSLATE ORE
     public static final DeferredBlock<Block> BLACK_OPAL_DEEPSLATE_ORE = registerBlock("black_opal_deepslate_ore",
-            () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
+            () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().sound(SoundType.SCAFFOLDING)));
     // BLACK_OPAL_NETHER_ORE
     public static final DeferredBlock<Block> BLACK_OPAL_NETHER_ORE = registerBlock("black_opal_nether_ore",
-            () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
+            () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().sound(SoundType.CROP)));
     // BLACK_OPAL_END_ORE
     public static final DeferredBlock<Block> BLACK_OPAL_END_ORE = registerBlock("black_opal_end_ore",
             () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().friction(2.0f).sound(SoundType.ANVIL)));
     //
     public static final DeferredBlock<Block> MAGIC_BLOCK = registerBlock("magic_block",
-            () -> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noLootTable()));
+            () -> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noLootTable().sound(ModSounds.MAGIC_BLOCK_SOUNDS)));
 
     public static final DeferredBlock<Block> BLACK_OPAL_STAIRS = registerBlock("black_opal_stairs",
             () -> new StairBlock(ModBlocks.BLACK_OPAL_BLOCK.get().defaultBlockState(),
