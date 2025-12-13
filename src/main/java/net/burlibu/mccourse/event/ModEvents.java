@@ -1,6 +1,8 @@
 package net.burlibu.mccourse.event;
 
 import net.burlibu.mccourse.MCCourseMod;
+import net.burlibu.mccourse.command.ReturnHomeCommand;
+import net.burlibu.mccourse.command.SetHomeCommand;
 import net.burlibu.mccourse.item.ModItems;
 import net.burlibu.mccourse.item.custom.HammerItem;
 import net.minecraft.core.BlockPos;
@@ -14,9 +16,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.neoforged.neoforge.server.command.ConfigCommand;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -79,5 +84,17 @@ public class ModEvents {
             player.sendSystemMessage(Component.literal(player.getName().getString() + "sarà meglio per te prendere l' arco!"));
         }
 
+    }
+    @SubscribeEvent
+    public static void onCommandRegister(RegisterCommandsEvent event){
+        new SetHomeCommand(event.getDispatcher());
+        new ReturnHomeCommand(event.getDispatcher());
+        ConfigCommand.register(event.getDispatcher());
+    }
+
+    @SubscribeEvent
+    public static void onPlayerCloned(PlayerEvent.Clone event) {
+        event.getEntity().getPersistentData().putIntArray("mccourse.homepos",
+                event.getOriginal().getPersistentData().getIntArray("mccourse.homepos"));
     }
 }
