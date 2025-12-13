@@ -45,7 +45,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BURLI_BOW);
                         output.accept(ModItems.TOMATO_SEEDS);
                         output.accept(ModBlocks.PETUNIA);
-                        output.accept(ModBlocks.COLORED_LEAVES);
+
+                        output.accept(ModItems.TREPALI_MUSIC_DISC);
 
                     })
                     .build());
@@ -77,6 +78,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BLACK_OPAL_DOOR);
                         output.accept(ModBlocks.BLACK_OPAL_TRAPDOOR);
                         output.accept(ModBlocks.BLACK_OPAL_LAMP);
+                        output.accept(ModBlocks.COLORED_LEAVES);
 
                     })
                     .build());

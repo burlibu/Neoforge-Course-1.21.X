@@ -62,5 +62,8 @@
 
 
   "sounds.mccourse.chainsaw_cut": "Chainsaw Cutting Sound",
-  "sounds.mccourse.chainsaw_pull": "Chainsaw Pulling Sound"
+  "sounds.mccourse.chainsaw_pull": "Chainsaw Pulling Sound",
+
+  "item.mccourse.trepali_music_disc": "3 Pali Music Disc",
+  "item.mccourse.trepali_music_disc.desc": "Lazza - 3 Pali"
 }

@@ -2,8 +2,11 @@ package net.burlibu.mccourse.sound;
 
 import net.burlibu.mccourse.MCCourseMod;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.item.JukeboxSong;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.util.DeferredSoundType;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -32,6 +35,14 @@ public class ModSounds {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID, name);
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
     }
+    public static final Supplier<SoundEvent> TREPALI = registerSoundEvent("trepali");
+    public static final ResourceKey<JukeboxSong> TREPALI_KEY = createSong("trepali");
+
+    private static ResourceKey<JukeboxSong> createSong(String name) {
+        return ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID, name));
+    }
+
+
     // Register in the event bus
     public static void register(IEventBus eventBus) {
         SOUND_EVENTS.register(eventBus);

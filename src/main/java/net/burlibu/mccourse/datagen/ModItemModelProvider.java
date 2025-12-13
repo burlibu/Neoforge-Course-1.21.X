@@ -70,7 +70,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.TOMATO_SEEDS.get());
         flowerItem(ModBlocks.PETUNIA);
+        basicItem(ModItems.TREPALI_MUSIC_DISC.get());
     }
+
+
     public void flowerItem(DeferredBlock<Block> block) {
         this.withExistingParent(block.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0",  ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID,

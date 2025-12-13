@@ -40,5 +40,13 @@
     "sounds": [
       "mccourse:magic_block_fall"
     ]
+  },
+  "trepali": {
+    "sounds": [
+      {
+        "name": "mccourse:trepali",
+        "stream": true
+      }
+    ]
   }
 }

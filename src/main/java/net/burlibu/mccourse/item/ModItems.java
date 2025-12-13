@@ -3,6 +3,7 @@ package net.burlibu.mccourse.item;
 import net.burlibu.mccourse.MCCourseMod;
 import net.burlibu.mccourse.block.ModBlocks;
 import net.burlibu.mccourse.item.custom.*;
+import net.burlibu.mccourse.sound.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
@@ -56,6 +57,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> TOMATO_SEEDS = ITEMS.register("tomato_seeds",
             () -> new ItemNameBlockItem(ModBlocks.TOMATO_CROP.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> TREPALI_MUSIC_DISC = ITEMS.registerItem("trepali_music_disc",
+            properties -> new Item(properties.jukeboxPlayable(ModSounds.TREPALI_KEY).stacksTo(1)));
 
 
 
