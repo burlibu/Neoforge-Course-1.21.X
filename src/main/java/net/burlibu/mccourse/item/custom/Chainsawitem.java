@@ -1,10 +1,12 @@
 package net.burlibu.mccourse.item.custom;
 
 import net.burlibu.mccourse.component.ModDataComponentTypes;
+import net.burlibu.mccourse.sound.ModSounds;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -26,13 +28,19 @@ public class Chainsawitem extends Item {
     public InteractionResult useOn(UseOnContext pContext) {
         Level level = pContext.getLevel();
         if (!level.isClientSide()){ // distruggere/ modificare blocchi dal server e non client
-            if (level.getBlockState(pContext.getClickedPos()).is(BlockTags.LOGS)) {
+            if (level.getBlockState(pContext.getClickedPos()).is(BlockTags.LOGS)) { // if hit a log
                 level.destroyBlock(pContext.getClickedPos(), true, pContext.getPlayer());
                 pContext.getItemInHand().hurtAndBreak(1,((ServerLevel) level),((ServerPlayer) pContext.getPlayer()),
                 item -> Objects.requireNonNull(pContext.getPlayer()).onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 pContext.getItemInHand().set(ModDataComponentTypes.COORDINATES, pContext.getClickedPos());
-
+                // to play the sound
+                //
+                pContext.getLevel().playSound(null, pContext.getPlayer().blockPosition(), ModSounds.CHAINSAW_CUT.get(),
+                        SoundSource.PLAYERS,1f, 1f);
+            } else { // not log
+                pContext.getLevel().playSound(null, pContext.getPlayer().blockPosition(), ModSounds.CHAINSAW_PULL.get(),
+                        SoundSource.PLAYERS,1f, 1f);
             }
         }
         return InteractionResult.CONSUME;

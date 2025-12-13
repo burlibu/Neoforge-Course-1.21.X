@@ -58,5 +58,9 @@
 
   "tooltip.mccourse.magic_block.tooltip.1": "This Block is §9MAGICAL§r",
   "tooltip.mccourse.tomato.1": "Tomato; Tomato",
-  "item.mccourse.metal_detector.no_valuables": "No Valuables Found!"
+  "item.mccourse.metal_detector.no_valuables": "No Valuables Found!",
+
+
+  "sounds.mccourse.chainsaw_cut": "Chainsaw Cutting Sound",
+  "sounds.mccourse.chainsaw_pull": "Chainsaw Pulling Sound"
 }
