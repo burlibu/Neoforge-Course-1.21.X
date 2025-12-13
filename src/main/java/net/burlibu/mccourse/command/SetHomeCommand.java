@@ -17,12 +17,15 @@ public class SetHomeCommand {
     }
 
     private int execute(CommandContext<CommandSourceStack> context) {
+
         ServerPlayer player = context.getSource().getPlayer();
+        String dimensionString = player.level().dimension().location().toString();
+        player.getPersistentData().putString("mccourse.homedim", dimensionString);
         BlockPos playerPos = player.blockPosition();
         String positionString = "(" + playerPos.getX() + ", " + playerPos.getY() + ", " + playerPos.getZ() + ")";
         player.getPersistentData().putIntArray("mccourse.homepos", new int[] {playerPos.getX(),playerPos.getY(),playerPos.getZ()});
 
-        context.getSource().sendSuccess(()-> Component.literal("Set home at "+positionString), true);
+        context.getSource().sendSuccess(()-> Component.literal("Set home at "+positionString + " in the " + dimensionString), true);
         return 1;
     }
 }

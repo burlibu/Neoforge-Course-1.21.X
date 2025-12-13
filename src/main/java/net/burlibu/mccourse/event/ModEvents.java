@@ -96,5 +96,7 @@ public class ModEvents {
     public static void onPlayerCloned(PlayerEvent.Clone event) {
         event.getEntity().getPersistentData().putIntArray("mccourse.homepos",
                 event.getOriginal().getPersistentData().getIntArray("mccourse.homepos"));
+        event.getEntity().getPersistentData().putString("mccourse.homedim",
+                event.getOriginal().getPersistentData().getString("mccourse.homedim"));
     }
 }
