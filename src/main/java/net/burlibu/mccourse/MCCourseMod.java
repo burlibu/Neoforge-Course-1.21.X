@@ -2,6 +2,7 @@ package net.burlibu.mccourse;
 
 import net.burlibu.mccourse.block.ModBlocks;
 import net.burlibu.mccourse.component.ModDataComponentTypes;
+import net.burlibu.mccourse.effect.ModEffects;
 import net.burlibu.mccourse.item.ModArmorMaterials;
 import net.burlibu.mccourse.item.ModCreativeModeTabs;
 import net.burlibu.mccourse.item.ModItems;
@@ -53,6 +54,7 @@ public class MCCourseMod {
         ModArmorMaterials.register(modEventBus);
         ModDataComponentTypes.register(modEventBus);
         ModSounds.register(modEventBus);
+        ModEffects.register(modEventBus);
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.

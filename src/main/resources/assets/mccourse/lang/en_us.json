@@ -68,5 +68,6 @@
   "item.mccourse.trepali_music_disc.desc": "Lazza - 3 Pali",
 
   "block.mccourse.pedestal": "Pedestal",
-  "item.mccourse.radiation_staff": "Radiation Staff"
+  "item.mccourse.radiation_staff": "Radiation Staff",
+  "effect.mccourse.slimey": "Slimey"
 }
