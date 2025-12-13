@@ -80,6 +80,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BLACK_OPAL_LAMP);
                         output.accept(ModBlocks.COLORED_LEAVES);
                         output.accept(ModBlocks.PEDESTAL);
+                        output.accept(ModItems.RADIATION_STAFF);
 
                     })
                     .build());

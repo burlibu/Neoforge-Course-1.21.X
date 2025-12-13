@@ -60,7 +60,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> TREPALI_MUSIC_DISC = ITEMS.registerItem("trepali_music_disc",
             properties -> new Item(properties.jukeboxPlayable(ModSounds.TREPALI_KEY).stacksTo(1)));
-
+    public static final DeferredItem<Item> RADIATION_STAFF = ITEMS.registerItem("radiation_staff",
+            properties -> new Item(properties.stacksTo(1)));
 
 
 
