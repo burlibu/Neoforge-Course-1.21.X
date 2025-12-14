@@ -3,6 +3,9 @@ package net.burlibu.mccourse;
 import net.burlibu.mccourse.block.ModBlocks;
 import net.burlibu.mccourse.component.ModDataComponentTypes;
 import net.burlibu.mccourse.effect.ModEffects;
+import net.burlibu.mccourse.fluid.BaseFluidType;
+import net.burlibu.mccourse.fluid.ModFluidTypes;
+import net.burlibu.mccourse.fluid.ModFluids;
 import net.burlibu.mccourse.item.ModArmorMaterials;
 import net.burlibu.mccourse.item.ModCreativeModeTabs;
 import net.burlibu.mccourse.item.ModItems;
@@ -11,10 +14,13 @@ import net.burlibu.mccourse.sound.ModSounds;
 import net.burlibu.mccourse.util.ModItemProperties;
 import net.burlibu.mccourse.villager.ModVillagers;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -59,6 +65,8 @@ public class MCCourseMod {
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
         ModVillagers.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
@@ -114,6 +122,16 @@ public class MCCourseMod {
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
             ModItemProperties.addCustomItemProperties();
+            event.enqueueWork(() -> {
+                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_BLACK_OPAL_WATER.get(), RenderType.translucent());
+                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_BLACK_OPAL_WATER.get(), RenderType.translucent());
+            });
+        }
+
+        @SubscribeEvent
+        public static void onClientExtensions(RegisterClientExtensionsEvent event) {
+            event.registerFluidType(((BaseFluidType) ModFluidTypes.BLACK_OPAL_WATER_FLUID_TYPE.get()).getClientFluidTypeExtensions(),
+                    ModFluidTypes.BLACK_OPAL_WATER_FLUID_TYPE.get());
         }
     @SubscribeEvent
     public static void registerColoredBlocks(RegisterColorHandlersEvent.Block event) {
@@ -125,6 +143,9 @@ public class MCCourseMod {
     public static void registerColoredItems(RegisterColorHandlersEvent.Item event) {
         event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), ModBlocks.COLORED_LEAVES);
     }
+
+
+
     }
 
 }

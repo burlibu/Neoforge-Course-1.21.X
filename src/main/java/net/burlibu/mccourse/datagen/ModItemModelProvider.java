@@ -2,6 +2,7 @@ package net.burlibu.mccourse.datagen;
 
 import net.burlibu.mccourse.MCCourseMod;
 import net.burlibu.mccourse.block.ModBlocks;
+import net.burlibu.mccourse.fluid.ModFluids;
 import net.burlibu.mccourse.item.ModItems;import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -71,6 +72,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.TOMATO_SEEDS.get());
         flowerItem(ModBlocks.PETUNIA);
         basicItem(ModItems.TREPALI_MUSIC_DISC.get());
+
+        basicItem(ModFluids.BLACK_OPAL_WATER_BUCKET.get());
     }
 
 

@@ -2,6 +2,7 @@ package net.burlibu.mccourse.item;
 
 import net.burlibu.mccourse.MCCourseMod;
 import net.burlibu.mccourse.block.ModBlocks;
+import net.burlibu.mccourse.fluid.ModFluids;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -47,7 +48,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PETUNIA);
 
                         output.accept(ModItems.TREPALI_MUSIC_DISC);
-
+                        output.accept(ModFluids.BLACK_OPAL_WATER_BUCKET);
                     })
                     .build());
     //================================================================================================
