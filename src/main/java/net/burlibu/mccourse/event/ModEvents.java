@@ -7,6 +7,7 @@ import net.burlibu.mccourse.command.SetHomeCommand;
 import net.burlibu.mccourse.item.ModItems;
 import net.burlibu.mccourse.item.custom.HammerItem;
 import net.burlibu.mccourse.potion.ModPotions;
+import net.burlibu.mccourse.villager.ModVillagers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -146,6 +147,28 @@ public class ModEvents {
             trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 1),
                     new ItemStack(ModItems.CHAINSAW.get(), 1), 1, 9, 0.05f
+            ));
+        }
+
+        if(event.getType() == ModVillagers.KAUPENGER.value()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 19),
+                    new ItemStack(ModItems.CHAINSAW.get(), 1), 1, 9, 0.05f
+            ));
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 6),
+                    new ItemStack(ModItems.FROSTFIRE_ICE.get(), 1), 1, 12, 0.05f
+            ));
+
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 6),
+                    new ItemStack(ModItems.RADIATION_STAFF.get(), 1), 1, 12, 0.05f
+            ));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.DIAMOND, 32),
+                    new ItemStack(ModItems.BLACK_OPAL.get(), 1), 4, 16, 0.05f
             ));
         }
     }

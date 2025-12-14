@@ -9,6 +9,7 @@ import net.burlibu.mccourse.item.ModItems;
 import net.burlibu.mccourse.potion.ModPotions;
 import net.burlibu.mccourse.sound.ModSounds;
 import net.burlibu.mccourse.util.ModItemProperties;
+import net.burlibu.mccourse.villager.ModVillagers;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.FoliageColor;
@@ -57,6 +58,7 @@ public class MCCourseMod {
         ModSounds.register(modEventBus);
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
+        ModVillagers.register(modEventBus);
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
