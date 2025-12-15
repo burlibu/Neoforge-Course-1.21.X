@@ -23,7 +23,6 @@
   "item.mccourse.metal_detector": "Metal Detector",
   "item.mccourse.data_tablet": "Data Tablet",
 
-
   "block.mccourse.black_opal_block": "Black Opal Block",
   "block.mccourse.raw_black_opal_block": "Raw Black Opal Block",
   "block.mccourse.black_opal_ore": "Black Opal Ore",
@@ -51,7 +50,6 @@
   "trim_pattern.mccourse.burlibu": "Burlibu Armor Trim",
   "trim_material.mccourse.black_opal": "Black Opal Material",
 
-
   "tooltip.mccourse.chainsaw.tooltip.shift": "Press §eShift§r for more Information!",
   "tooltip.mccourse.chainsaw.tooltip.1": "This chainsaw is awesome and will cut down trees!",
   "tooltip.mccourse.chainsaw.tooltip.2": "§oChainsaw go vroom!§r",
@@ -59,7 +57,6 @@
   "tooltip.mccourse.magic_block.tooltip.1": "This Block is §9MAGICAL§r",
   "tooltip.mccourse.tomato.1": "Tomato; Tomato",
   "item.mccourse.metal_detector.no_valuables": "No Valuables Found!",
-
 
   "sounds.mccourse.chainsaw_cut": "Chainsaw Cutting Sound",
   "sounds.mccourse.chainsaw_pull": "Chainsaw Pulling Sound",
