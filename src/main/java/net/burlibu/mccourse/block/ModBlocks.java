@@ -49,6 +49,8 @@ public class ModBlocks {
             () -> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noLootTable().sound(ModSounds.MAGIC_BLOCK_SOUNDS)));
 
     // PROVA
+    //public static final DeferredBlock<Block> SPICE_ORE_BLOCK = registerBlock("spice_ore_block",
+    //        () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().sound(SoundType.SPORE_BLOSSOM)));
 
     public static final DeferredBlock<Block> BLACK_OPAL_STAIRS = registerBlock("black_opal_stairs",
             () -> new StairBlock(ModBlocks.BLACK_OPAL_BLOCK.get().defaultBlockState(),
