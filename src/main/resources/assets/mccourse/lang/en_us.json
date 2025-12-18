@@ -82,5 +82,6 @@
   "painting.mccourse.saw_them.author": "NanoAttack",
   "painting.mccourse.wanderer.title": "Wanderer",
   "painting.mccourse.wanderer.author": "PlatinumG17",
-  "item.mccourse.black_opal_water_bucket": "Black Opal Water Bucket"
+  "item.mccourse.black_opal_water_bucket": "Black Opal Water Bucket",
+  "block.mccourse.crystallizer": "Crystallizer"
 }

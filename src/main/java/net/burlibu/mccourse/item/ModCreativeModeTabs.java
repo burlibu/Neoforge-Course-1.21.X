@@ -49,6 +49,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.TREPALI_MUSIC_DISC);
                         output.accept(ModFluids.BLACK_OPAL_WATER_BUCKET);
+                        output.accept(ModBlocks.CRYSTALLIZER);
                     })
                     .build());
     //================================================================================================

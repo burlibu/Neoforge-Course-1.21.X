@@ -74,6 +74,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.TREPALI_MUSIC_DISC.get());
 
         basicItem(ModFluids.BLACK_OPAL_WATER_BUCKET.get());
+
+        horizontalBlockItem(ModBlocks.CRYSTALLIZER);
+    }
+
+    private ItemModelBuilder horizontalBlockItem(DeferredBlock<Block> block) {
+        return getBuilder(block.getId().getPath()).parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID,
+                "block/" + block.getId().getPath())));
     }
 
 

@@ -1,10 +1,7 @@
 package net.burlibu.mccourse.block;
 
 import net.burlibu.mccourse.MCCourseMod;
-import net.burlibu.mccourse.block.custom.BlackOpalLampBlock;
-import net.burlibu.mccourse.block.custom.MagicBlock;
-import net.burlibu.mccourse.block.custom.PedestalBlock;
-import net.burlibu.mccourse.block.custom.TomatoCropBlock;
+import net.burlibu.mccourse.block.custom.*;
 import net.burlibu.mccourse.item.ModItems;
 import net.burlibu.mccourse.sound.ModSounds;
 import net.minecraft.sounds.SoundEvents;
@@ -90,7 +87,8 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> PEDESTAL = registerBlock("pedestal",
             () -> new PedestalBlock(BlockBehaviour.Properties.of().noOcclusion()));
-
+    public static final DeferredBlock<Block> CRYSTALLIZER = registerBlock("crystallizer",
+            () -> new CrystallizerBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
 
 
     //===================================== HELPER FUNCS ================================================
