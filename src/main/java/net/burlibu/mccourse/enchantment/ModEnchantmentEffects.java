@@ -17,9 +17,8 @@ public class ModEnchantmentEffects {
     public static final Supplier<MapCodec<? extends EnchantmentEntityEffect>> LIGHTNING_STRIKER =
             registerEnchantmentEffect("lightning_striker", LightningStrikerEnchantmentEffect.CODEC);
 
-    private static Supplier<MapCodec<? extends EnchantmentEntityEffect>> registerEnchantmentEffect(
-                                            String name,MapCodec<? extends EnchantmentEntityEffect> codec) {
-
+    private static Supplier<MapCodec<? extends EnchantmentEntityEffect>> registerEnchantmentEffect( String name,
+                                                                                                    MapCodec<? extends EnchantmentEntityEffect> codec) {
         return ENTITY_ENCHANTMENT_EFFECTS.register(name, () -> codec);
     }
 

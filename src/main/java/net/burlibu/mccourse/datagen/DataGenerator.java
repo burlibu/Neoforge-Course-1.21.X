@@ -39,6 +39,6 @@ public class DataGenerator {
         // fluid tags provider
         generator.addProvider(event.includeServer(), new ModFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
         // data registry
-        generator.addProvider(event.includeServer(), new ModDataRegistryProvider(packOutput, lookupProvider));
+        //generator.addProvider(event.includeServer(), new ModDataRegistryProvider(packOutput, lookupProvider));
     }
 }
