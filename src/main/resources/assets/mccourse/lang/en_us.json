@@ -83,5 +83,6 @@
   "painting.mccourse.wanderer.title": "Wanderer",
   "painting.mccourse.wanderer.author": "PlatinumG17",
   "item.mccourse.black_opal_water_bucket": "Black Opal Water Bucket",
-  "block.mccourse.crystallizer": "Crystallizer"
+  "block.mccourse.crystallizer": "Crystallizer",
+  "enchantment.mccourse.lightning_striker": "Lightning Striker"
 }
