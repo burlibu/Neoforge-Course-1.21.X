@@ -45,6 +45,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .addTag(BlockTags.MINEABLE_WITH_AXE)
                 .addTag(BlockTags.MINEABLE_WITH_SHOVEL);
+
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.EBONY_LOG.get())
+                .add(ModBlocks.EBONY_WOOD.get())
+                .add(ModBlocks.STRIPPED_EBONY_LOG.get())
+                .add(ModBlocks.STRIPPED_EBONY_WOOD.get());
     }
 
 }

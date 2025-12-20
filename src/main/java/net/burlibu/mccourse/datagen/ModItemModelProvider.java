@@ -76,8 +76,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModFluids.BLACK_OPAL_WATER_BUCKET.get());
 
         horizontalBlockItem(ModBlocks.CRYSTALLIZER);
+        saplingItem(ModBlocks.EBONY_SAPLING);
     }
 
+    private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID, "block/" + item.getId().getPath()));
+    }
     private ItemModelBuilder horizontalBlockItem(DeferredBlock<Block> block) {
         return getBuilder(block.getId().getPath()).parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID,
                 "block/" + block.getId().getPath())));

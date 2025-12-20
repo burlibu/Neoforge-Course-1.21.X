@@ -49,7 +49,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.TREPALI_MUSIC_DISC);
                         output.accept(ModFluids.BLACK_OPAL_WATER_BUCKET);
-                        output.accept(ModBlocks.CRYSTALLIZER);
+                        output.accept(ModBlocks.EBONY_SAPLING);
+
                     })
                     .build());
     //================================================================================================
@@ -83,6 +84,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.COLORED_LEAVES);
                         output.accept(ModBlocks.PEDESTAL);
                         output.accept(ModItems.RADIATION_STAFF);
+                        output.accept(ModBlocks.CRYSTALLIZER);
+                        output.accept(ModBlocks.EBONY_LEAVES);
+                        output.accept(ModBlocks.EBONY_LOG);
+                        output.accept(ModBlocks.EBONY_PLANKS);
+                        output.accept(ModBlocks.STRIPPED_EBONY_LOG);
+                        output.accept(ModBlocks.STRIPPED_EBONY_WOOD);
 
                     })
                     .build());

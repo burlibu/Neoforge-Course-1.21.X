@@ -84,5 +84,13 @@
   "painting.mccourse.wanderer.author": "PlatinumG17",
   "item.mccourse.black_opal_water_bucket": "Black Opal Water Bucket",
   "block.mccourse.crystallizer": "Crystallizer",
-  "enchantment.mccourse.lightning_striker": "Lightning Striker"
+  "enchantment.mccourse.lightning_striker": "Lightning Striker",
+  "block.mccourse.ebony_log": "Ebony Log",
+  "block.mccourse.ebony_planks": "Ebony Planks",
+  "block.mccourse.ebony_wood": "Ebony Wood",
+  "block.mccourse.stripped_ebony_log": "Stripped Ebony Log",
+  "block.mccourse.stripped_ebony_wood": "Stripped Ebony Wood",
+  "block.mccourse.ebony_leaves": "Ebony Leaves",
+
+  "block.mccourse.ebony_sapling": "Ebony Sapling"
 }

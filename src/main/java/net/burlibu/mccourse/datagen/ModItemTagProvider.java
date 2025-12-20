@@ -1,6 +1,7 @@
 package net.burlibu.mccourse.datagen;
 
 import net.burlibu.mccourse.MCCourseMod;
+import net.burlibu.mccourse.block.ModBlocks;
 import net.burlibu.mccourse.item.ModItems;
 import net.burlibu.mccourse.util.ModTags;
 import net.minecraft.core.HolderLookup;
@@ -37,5 +38,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         this.tag(ItemTags.TRIM_TEMPLATES)
                 .add(ModItems.BURLIBU_SMITHING_TEMPLATE.get());
+
+        tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.EBONY_LOG.get().asItem())
+                .add(ModBlocks.EBONY_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_EBONY_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_EBONY_WOOD.get().asItem());
+
+        tag(ItemTags.PLANKS)
+                .add(ModBlocks.EBONY_PLANKS.get().asItem());
     }
 }
