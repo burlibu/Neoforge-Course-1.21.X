@@ -34,11 +34,13 @@ public class DataGenerator {
 
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
-        // mod datapack provider
+        // mod datapack provider + data registry + biome
         generator.addProvider(event.includeServer(), new ModDatapackProvider(packOutput, lookupProvider));
         // fluid tags provider
         generator.addProvider(event.includeServer(), new ModFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
         // data registry
         //generator.addProvider(event.includeServer(), new ModDataRegistryProvider(packOutput, lookupProvider));
+        // Biome
+        //generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
     }
 }
