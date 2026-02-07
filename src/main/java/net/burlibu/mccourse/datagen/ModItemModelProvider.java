@@ -70,13 +70,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.METAL_DETECTOR.get());
 
         basicItem(ModItems.TOMATO_SEEDS.get());
-        flowerItem(ModBlocks.PETUNIA);
+//        flowerItem(ModBlocks.PETUNIA);
         basicItem(ModItems.TREPALI_MUSIC_DISC.get());
 
         basicItem(ModFluids.BLACK_OPAL_WATER_BUCKET.get());
 
         horizontalBlockItem(ModBlocks.CRYSTALLIZER);
         saplingItem(ModBlocks.EBONY_SAPLING);
+
+        saplingItem(ModBlocks.PETUNIA);
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {

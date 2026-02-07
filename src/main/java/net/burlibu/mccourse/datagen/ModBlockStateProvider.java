@@ -74,6 +74,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         leavesBlock(ModBlocks.EBONY_LEAVES);
         saplingBlock(ModBlocks.EBONY_SAPLING);
+
+        
     }
 
 
