@@ -3,6 +3,8 @@ package net.burlibu.mccourse;
 import net.burlibu.mccourse.block.ModBlocks;
 import net.burlibu.mccourse.component.ModDataComponentTypes;
 import net.burlibu.mccourse.effect.ModEffects;
+import net.burlibu.mccourse.worldgen.biome.ModBiomes;
+import net.burlibu.mccourse.worldgen.biome.ModSurfaceRules;
 import net.burlibu.mccourse.enchantment.ModEnchantmentEffects;
 import net.burlibu.mccourse.fluid.BaseFluidType;
 import net.burlibu.mccourse.fluid.ModFluidTypes;
@@ -23,7 +25,7 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import org.slf4j.Logger;
-
+import terrablender.api.SurfaceRuleManager;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -98,6 +100,12 @@ public class MCCourseMod {
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.PETUNIA.getId(), ModBlocks.POTTED_PETUNIA);
         });
+        // Registrazione biomi
+        ModBiomes.registerBiomes();
+
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeKaupenValleyRules());
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.NETHER, MOD_ID, ModSurfaceRules.makeGlowstonePlainsRules());
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.END, MOD_ID, ModSurfaceRules.makeEndRotRules());
     }
 
 

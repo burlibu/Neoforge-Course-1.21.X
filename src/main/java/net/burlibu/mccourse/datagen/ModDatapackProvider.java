@@ -4,11 +4,10 @@ import net.burlibu.mccourse.MCCourseMod;
 import net.burlibu.mccourse.enchantment.ModEnchantments;
 import net.burlibu.mccourse.trim.ModTrimMaterials;
 import net.burlibu.mccourse.trim.ModTrimPatterns;
-import net.burlibu.mccourse.MCCourseMod;
-import net.burlibu.mccourse.trim.ModTrimPatterns;
 import net.burlibu.mccourse.worldgen.ModBiomeModifiers;
 import net.burlibu.mccourse.worldgen.ModConfiguredFeatures;
 import net.burlibu.mccourse.worldgen.ModPlacedFeatures;
+import net.burlibu.mccourse.worldgen.biome.ModBiomes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -29,8 +28,8 @@ public class ModDatapackProvider extends DatapackBuiltinEntriesProvider {
             //BIOME
             .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
-            .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap);
-
+            .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap)
+            .add(Registries.BIOME, ModBiomes::bootstrap);
 
     public ModDatapackProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(MCCourseMod.MOD_ID));

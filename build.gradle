@@ -18,9 +18,22 @@ version = mod_version
 group = mod_group_id
 
 repositories {
-    // Add here additional repositories if required by some of the dependencies below.
-}
+    // Repository ufficiale per TerraBlender
+    maven {
+        name = "Glitchfiend Maven"
+        url = "https://maven.glitchfiend.dev/releases"
+    }
 
+    // JitPack (tienilo, serve per altre librerie)
+    maven {
+        name = "JitPack"
+        url = "https://jitpack.io"
+    }
+
+    // Repository standard NeoForge e Sponge
+    maven { url = 'https://maven.minecraftforge.net/' }
+    maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+}
 base {
     archivesName = mod_id
 }
@@ -112,6 +125,8 @@ configurations {
 }
 
 dependencies {
+    implementation  group:'org.spongepowered', name: 'mixin', version: '0.8.5'
+    implementation  'com.github.glitchfiend:TerraBlender-neoforge:' + minecraft_version + '-' + terrablender_version
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"

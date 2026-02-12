@@ -41,6 +41,6 @@ public class DataGenerator {
         // data registry
         //generator.addProvider(event.includeServer(), new ModDataRegistryProvider(packOutput, lookupProvider));
         // Biome
-        //generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
+//        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
     }
 }
