@@ -32,10 +32,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     // ======================================================================================================================
     @Override
     protected void generate() {
+        // BLACK OPAL
         dropSelf(ModBlocks.BLACK_OPAL_BLOCK.get());
         dropSelf(ModBlocks.RAW_BLACK_OPAL_BLOCK.get());
-        // dropSelf(ModBlocks.MAGIC_BLOCK.get());
-
+        dropSelf(ModBlocks.MAGIC_BLOCK.get());
         this.add(ModBlocks.BLACK_OPAL_ORE.get(),
                 block -> createOreDrop(ModBlocks.BLACK_OPAL_ORE.get(), ModItems.RAW_BLACK_OPAL.get()));
         this.add(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE.get(),
@@ -44,13 +44,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createMultipleOreDrops(ModBlocks.BLACK_OPAL_END_ORE.get(), ModItems.RAW_BLACK_OPAL.get(), 4, 7));
         this.add(ModBlocks.BLACK_OPAL_NETHER_ORE.get(),
                 block -> createMultipleOreDrops(ModBlocks.BLACK_OPAL_NETHER_ORE.get(), ModItems.RAW_BLACK_OPAL.get(), 3, 9));
-        //this.add(ModBlocks.BLACK_OPAL_ORE.get(),
-        //      block -> createOreDrop(ModBlocks.BLACK_OPAL_ORE.get(), ModItems.RAW_BLACK_OPAL.get()));
+
                 
         dropSelf(ModBlocks.BLACK_OPAL_STAIRS.get());
-        
-        this.add(ModBlocks.BLACK_OPAL_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.BLACK_OPAL_SLAB.get()));
+        this.add(ModBlocks.BLACK_OPAL_SLAB.get(), block -> createSlabItemTable(ModBlocks.BLACK_OPAL_SLAB.get()));
         dropSelf(ModBlocks.BLACK_OPAL_PRESSURE_PLATE.get());
         dropSelf(ModBlocks.BLACK_OPAL_BUTTON.get());
         dropSelf(ModBlocks.BLACK_OPAL_FENCE.get());
@@ -72,14 +69,15 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.PEDESTAL.get());
 
         dropSelf(ModBlocks.CRYSTALLIZER.get());
+
+
+        // EBONY
         this.dropSelf(ModBlocks.EBONY_LOG.get());
         this.dropSelf(ModBlocks.EBONY_WOOD.get());
         this.dropSelf(ModBlocks.STRIPPED_EBONY_LOG.get());
         this.dropSelf(ModBlocks.STRIPPED_EBONY_WOOD.get());
-
         this.dropSelf(ModBlocks.EBONY_PLANKS.get());
         this.dropSelf(ModBlocks.EBONY_SAPLING.get());
-
         this.add(ModBlocks.EBONY_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.EBONY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 

@@ -17,7 +17,6 @@ public class SetHomeCommand {
     }
 
     private int execute(CommandContext<CommandSourceStack> context) {
-
         ServerPlayer player = context.getSource().getPlayer();
         String dimensionString = player.level().dimension().location().toString();
         player.getPersistentData().putString("mccourse.homedim", dimensionString);

@@ -108,13 +108,12 @@ public class MCCourseMod {
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.END, MOD_ID, ModSurfaceRules.makeEndRotRules());
     }
 
-
-    // Add the example block item to the building blocks tab
+    // Adding items to the creative tabs
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+    // Add the example block item to the ingredients blocks tab
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.BLACK_OPAL);
             event.accept(ModItems.RAW_BLACK_OPAL);
-
         }
     }
 
@@ -145,16 +144,16 @@ public class MCCourseMod {
             event.registerFluidType(((BaseFluidType) ModFluidTypes.BLACK_OPAL_WATER_FLUID_TYPE.get()).getClientFluidTypeExtensions(),
                     ModFluidTypes.BLACK_OPAL_WATER_FLUID_TYPE.get());
         }
-    @SubscribeEvent
-    public static void registerColoredBlocks(RegisterColorHandlersEvent.Block event) {
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null &&
-                pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getDefaultColor(), ModBlocks.COLORED_LEAVES.get());
-    }
+        @SubscribeEvent
+        public static void registerColoredBlocks(RegisterColorHandlersEvent.Block event) {
+            event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null &&
+                    pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getDefaultColor(), ModBlocks.COLORED_LEAVES.get());
+        }
 
-    @SubscribeEvent
-    public static void registerColoredItems(RegisterColorHandlersEvent.Item event) {
-        event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), ModBlocks.COLORED_LEAVES);
-    }
+        @SubscribeEvent
+        public static void registerColoredItems(RegisterColorHandlersEvent.Item event) {
+            event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), ModBlocks.COLORED_LEAVES);
+        }
 
 
 

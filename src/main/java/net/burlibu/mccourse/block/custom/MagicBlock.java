@@ -39,10 +39,8 @@ public class MagicBlock extends Block {
         if (entity instanceof ItemEntity itemEntity){
             if(isValidItem(itemEntity.getItem())) {
                 itemEntity.setItem(new ItemStack(Items.DIAMOND, itemEntity.getItem().getCount()));
-
             }
         }
-
         super.stepOn(level, pos, state, entity);
     }
 

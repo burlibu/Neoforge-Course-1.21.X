@@ -93,7 +93,8 @@ public class ModCreativeModeTabs {
 
                     })
                     .build());
-    //======================================================================================================
+
+    //=================================== EVENT BUS ===================================================================
     public static void register(IEventBus eventbus){
         CREATIVE_MODE_TABS.register(eventbus);
     }

@@ -44,7 +44,6 @@ public class CrystallizerBlock extends HorizontalDirectionalBlock {
         double yPos = pPos.getY() + 1.25f;
         double zPos = pPos.getZ() + 0.5f;
         double offset = pRandom.nextDouble() * 0.6 - 0.3;
-
         pLevel.addParticle(ParticleTypes.SMOKE, xPos + offset, yPos, zPos + offset, 0.0, 0.0, 0.0);
         pLevel.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ModBlocks.BLACK_OPAL_BLOCK.get().defaultBlockState()),
                 xPos + offset, yPos, zPos + offset, 0.0, 0.0, 0.0);

@@ -13,27 +13,26 @@ public class TomatoCropBlock extends CropBlock {
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 5);
 
     public TomatoCropBlock(Properties properties) {
-
         super(properties);
     }
 
-        @Override
-        protected ItemLike getBaseSeedId() {
-            return ModItems.TOMATO_SEEDS;
-        }
-
-        @Override
-        public IntegerProperty getAgeProperty() {
-            return AGE;
-        }
-
-        @Override
-        public int getMaxAge() {
-            return MAX_AGE;
-        }
-
-        @Override
-        protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-            pBuilder.add(AGE);
-        }
+    @Override
+    protected ItemLike getBaseSeedId() {
+        return ModItems.TOMATO_SEEDS;
     }
+
+    @Override
+    public IntegerProperty getAgeProperty() {
+        return AGE;
+    }
+
+    @Override
+    public int getMaxAge() {
+        return MAX_AGE;
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+        pBuilder.add(AGE);
+    }
+}

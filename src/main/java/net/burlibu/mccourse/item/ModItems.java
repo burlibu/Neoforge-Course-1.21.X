@@ -89,9 +89,12 @@ public class ModItems {
     // Smithing template
     public static final DeferredItem<Item> BURLIBU_SMITHING_TEMPLATE = ITEMS.register("burlibu_armor_trim_smithing_template",
             () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID, "burlibu")));
+
+
+
+
     // =============================================== EVENT BUS ==================================================
     public static void register(IEventBus eventbus) {
         ITEMS.register(eventbus);
-
     }
 }

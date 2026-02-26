@@ -19,7 +19,7 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource NETHERRACK = makeStateRule(Blocks.NETHERRACK);
     private static final SurfaceRules.RuleSource BEDROCK = makeStateRule(Blocks.BEDROCK);
 
-
+    public static SurfaceRules.RuleSource GLASS_RULE = SurfaceRules.state(Blocks.GLASS.defaultBlockState());
     public static SurfaceRules.RuleSource makeKaupenValleyRules() {
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.KAUPEN_VALLEY),
@@ -39,7 +39,7 @@ public class ModSurfaceRules {
                         SurfaceRules.isBiome(ModBiomes.GLOWSTONE_PLAIN),
                         SurfaceRules.sequence(
                                 // Obsidian on the undersides of ceilings
-                                SurfaceRules.ifTrue(SurfaceRules.UNDER_CEILING, OBSIDIAN),
+                                SurfaceRules.ifTrue(SurfaceRules.UNDER_CEILING, GLASS_RULE),
                                 // Obsidian on the undersides of floors (though less common in Nether caves)
                                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, GLOWSTONE),
                                 SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, OBSIDIAN),
