@@ -32,7 +32,5 @@ public class ReturnHomeCommand {
 
         context.getSource().sendSuccess(() -> Component.literal("Player returned Home!"), false);
         return 1;
-
         }
-
     }

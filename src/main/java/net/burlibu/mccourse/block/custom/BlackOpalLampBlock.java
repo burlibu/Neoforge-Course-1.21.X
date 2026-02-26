@@ -24,7 +24,6 @@ public class BlackOpalLampBlock extends Block {
             boolean currentState = pState.getValue(CLICKED);
             pLevel.setBlock(pPos, pState.setValue(CLICKED, !currentState), 3);
         }
-
         return InteractionResult.SUCCESS;
     }
 

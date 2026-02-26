@@ -105,7 +105,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((TomatoCropBlock) block).getAgeProperty()),
                 ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID, "block/" + textureName +
                         state.getValue(((TomatoCropBlock) block).getAgeProperty()))).renderType("cutout"));
-
         return models;
     }
 
