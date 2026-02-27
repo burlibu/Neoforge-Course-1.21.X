@@ -3,6 +3,7 @@ package net.burlibu.mccourse.event;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.burlibu.mccourse.MCCourseMod;
 import net.burlibu.mccourse.command.BuildHouseCommand;
+import net.burlibu.mccourse.command.DragonCommand;
 import net.burlibu.mccourse.command.HealCommand;
 import net.burlibu.mccourse.command.NetherPortalCommand;
 import net.burlibu.mccourse.command.ReturnHomeCommand;
@@ -109,6 +110,7 @@ public class ModEvents {
         new HealCommand(event.getDispatcher());
         new NetherPortalCommand(event.getDispatcher());
         new TeleportAllCommand(event.getDispatcher());
+        new BuildHouseCommand(event.getDispatcher());
         ConfigCommand.register(event.getDispatcher());
     }
 
