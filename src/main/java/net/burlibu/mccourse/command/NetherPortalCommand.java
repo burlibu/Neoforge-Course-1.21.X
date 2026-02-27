@@ -48,6 +48,8 @@ public class NetherPortalCommand {
             ServerLevel level = player.serverLevel();
             BlockPos playerPos = player.blockPosition();
             BlockPos portalPos = findSafePortalLocation(level, playerPos);
+            
+            // Calcola la posizione finale del portale basandosi sulla direzione del player
             if (player_orientation.equals("west")) {
                 portalPos = portalPos.offset(-1, 0, 0);
             } else if (player_orientation.equals("east")) {
@@ -57,11 +59,16 @@ public class NetherPortalCommand {
             } else {
                 portalPos = portalPos.offset(0, 0, -1);
             }
-            buildPortalFrame(level, portalPos, orientation, player_orientation);
-            lightPortal(level, portalPos, orientation);
+            
+            // Crea una variabile finale per la lambda
+            final BlockPos finalPortalPos = portalPos;
+            
+            buildPortalFrame(level, finalPortalPos, orientation, player_orientation);
+//            lightPortal(level, finalPortalPos, orientation);
+            
             context.getSource().sendSuccess(() -> 
                 Component.literal("Nether Portal created at " + 
-                    portalPos.getX() + ", " + portalPos.getY() + ", " + portalPos.getZ()), true);
+                    finalPortalPos.getX() + ", " + finalPortalPos.getY() + ", " + finalPortalPos.getZ()), true);
             
             return 1;
             
@@ -135,7 +142,7 @@ public class NetherPortalCommand {
             BlockState netherPortal = Blocks.NETHER_PORTAL.defaultBlockState()
                 .setValue(NetherPortalBlock.AXIS, Direction.Axis.X);
             
-            for (int x = 0; x < 2; x++) {
+            for (int x = -1; x < 3; x++) {
                 for (int y = 0; y < 4; y++) {
                     level.setBlock(basePos.offset(x + 1, y, 0), netherPortal, 3);
                 }
