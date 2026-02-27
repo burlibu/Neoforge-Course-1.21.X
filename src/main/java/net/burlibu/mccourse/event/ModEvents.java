@@ -111,6 +111,7 @@ public class ModEvents {
         new NetherPortalCommand(event.getDispatcher());
         new TeleportAllCommand(event.getDispatcher());
         new BuildHouseCommand(event.getDispatcher());
+        new DragonCommand(event.getDispatcher());
         ConfigCommand.register(event.getDispatcher());
     }
 
