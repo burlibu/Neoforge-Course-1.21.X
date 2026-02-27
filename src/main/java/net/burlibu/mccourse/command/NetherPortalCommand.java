@@ -61,7 +61,7 @@ public class NetherPortalCommand {
             }
             final BlockPos finalPortalPos = portalPos; // Crea una variabile finale per la lambda
             buildPortalFrame(level, finalPortalPos, player_orientation);
-            lightPortal(level, finalPortalPos, orientation);
+            lightPortal(level, finalPortalPos, player_orientation);
             
             context.getSource().sendSuccess(() -> 
                 Component.literal("Nether Portal created at " + 
