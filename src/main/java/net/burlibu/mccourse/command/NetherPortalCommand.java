@@ -18,14 +18,14 @@ public class NetherPortalCommand {
     
     public NetherPortalCommand(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("netherportal")
-            .executes(this::createPortalAtPlayer)
-            .then(Commands.argument("orientation", StringArgumentType.string())
-                .suggests((context, builder) -> {
-                    builder.suggest("north");
-                    builder.suggest("east");
-                    return builder.buildFuture();
-                })
-                .executes(this::createPortalWithOrientation)));
+            .executes(this::createPortalAtPlayer));
+//            .then(Commands.argument("orientation", StringArgumentType.string())
+//                .suggests((context, builder) -> {
+//                    builder.suggest("north");
+//                    builder.suggest("east");
+//                    return builder.buildFuture();
+//                })
+//                .executes(this::createPortalWithOrientation)));
     }
 
     private int createPortalAtPlayer(CommandContext<CommandSourceStack> context) {
@@ -59,12 +59,9 @@ public class NetherPortalCommand {
             } else {
                 portalPos = portalPos.offset(0, 0, -1);
             }
-            
-            // Crea una variabile finale per la lambda
-            final BlockPos finalPortalPos = portalPos;
-            
-            buildPortalFrame(level, finalPortalPos, orientation, player_orientation);
-//            lightPortal(level, finalPortalPos, orientation);
+            final BlockPos finalPortalPos = portalPos; // Crea una variabile finale per la lambda
+            buildPortalFrame(level, finalPortalPos, player_orientation);
+            lightPortal(level, finalPortalPos, orientation);
             
             context.getSource().sendSuccess(() -> 
                 Component.literal("Nether Portal created at " + 
@@ -104,10 +101,10 @@ public class NetherPortalCommand {
         return true;
     }
 
-    private void buildPortalFrame(ServerLevel level, BlockPos basePos, String orientation, String playerDirection) {
+    private void buildPortalFrame(ServerLevel level, BlockPos basePos, String orientation) {
         BlockState obsidian = Blocks.OBSIDIAN.defaultBlockState();
 
-        if (orientation.equals("north")) {
+        if (orientation.equals("north") || orientation.equals("south")) {
 
             // Portale orientato nord-sud (frame lungo l'asse X)
             // Base del portale
@@ -120,8 +117,7 @@ public class NetherPortalCommand {
                 level.setBlock(basePos.offset(-1, y, 0), obsidian, 3);
                 level.setBlock(basePos.offset(4, y, 0), obsidian, 3);
             }
-        } else {
-            // Portale orientato est-ovest (frame lungo l'asse Z)
+        } else { // Portale orientato est-ovest (frame lungo l'asse Z)
             // Base del portale
             for (int z = 0; z < 4; z++) {
                 level.setBlock(basePos.offset(0, -1, z), obsidian, 3);
@@ -137,7 +133,7 @@ public class NetherPortalCommand {
     }
 
     private void lightPortal(ServerLevel level, BlockPos basePos, String orientation) {
-        if (orientation.equals("north")) {
+        if (orientation.equals("north") || orientation.equals("south")) {
             // Riempi l'interno del portale (orientamento nord-sud) - asse X
             BlockState netherPortal = Blocks.NETHER_PORTAL.defaultBlockState()
                 .setValue(NetherPortalBlock.AXIS, Direction.Axis.X);
