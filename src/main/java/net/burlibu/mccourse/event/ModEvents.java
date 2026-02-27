@@ -2,10 +2,12 @@ package net.burlibu.mccourse.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.burlibu.mccourse.MCCourseMod;
+import net.burlibu.mccourse.command.BuildHouseCommand;
 import net.burlibu.mccourse.command.HealCommand;
 import net.burlibu.mccourse.command.NetherPortalCommand;
 import net.burlibu.mccourse.command.ReturnHomeCommand;
 import net.burlibu.mccourse.command.SetHomeCommand;
+import net.burlibu.mccourse.command.TeleportAllCommand;
 import net.burlibu.mccourse.item.ModItems;
 import net.burlibu.mccourse.item.custom.HammerItem;
 import net.burlibu.mccourse.potion.ModPotions;
@@ -106,6 +108,7 @@ public class ModEvents {
         new ReturnHomeCommand(event.getDispatcher());
         new HealCommand(event.getDispatcher());
         new NetherPortalCommand(event.getDispatcher());
+        new TeleportAllCommand(event.getDispatcher());
         ConfigCommand.register(event.getDispatcher());
     }
 
