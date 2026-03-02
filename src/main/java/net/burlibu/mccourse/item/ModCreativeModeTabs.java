@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                     .displayItems((pParameters, output) -> {
                         output.accept(ModItems.BLACK_OPAL);
                         output.accept(ModItems.RAW_BLACK_OPAL);
+                        output.accept(ModItems.SPICE);
                         output.accept(ModItems.CHAINSAW);
                         output.accept(ModItems.TOMATO);
                         output.accept(ModItems.FROSTFIRE_ICE);
@@ -65,6 +66,7 @@ public class ModCreativeModeTabs {
                     .displayItems((pParameters, output) -> {
                         output.accept(ModBlocks.BLACK_OPAL_BLOCK);
                         output.accept(ModBlocks.RAW_BLACK_OPAL_BLOCK);
+                        output.accept(ModBlocks.SPICE_ORE_BLOCK);
                         output.accept(Blocks.DEEPSLATE_DIAMOND_ORE);
                         output.accept(ModBlocks.BLACK_OPAL_ORE);
                         output.accept(ModBlocks.BLACK_OPAL_DEEPSLATE_ORE);

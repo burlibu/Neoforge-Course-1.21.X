@@ -52,8 +52,8 @@ public class ModBlocks {
     // .noLootTable() fa si non possa venir droppato, quindi in lootTableProvider non ci deve essere
 
     // PROVA
-    //public static final DeferredBlock<Block> SPICE_ORE_BLOCK = registerBlock("spice_ore_block",
-    //        () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().sound(SoundType.SPORE_BLOSSOM)));
+    public static final DeferredBlock<Block> SPICE_ORE_BLOCK = registerBlock("spice_ore_block",
+            () -> new DropExperienceBlock(UniformInt.of(2,5),BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().sound(SoundType.SPORE_BLOSSOM)));
 
     public static final DeferredBlock<Block> BLACK_OPAL_STAIRS = registerBlock("black_opal_stairs",
             () -> new StairBlock(ModBlocks.BLACK_OPAL_BLOCK.get().defaultBlockState(),

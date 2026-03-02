@@ -19,6 +19,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> BLACK_OPAL =
             ITEMS.registerSimpleItem("black_opal");
+    public static final DeferredItem<Item> SPICE =
+            ITEMS.registerSimpleItem("spice");
     public static final DeferredItem<Item> RAW_BLACK_OPAL
             = ITEMS.registerItem("raw_black_opal", Item::new, new Item.Properties());
     public static final DeferredItem<Item> CHAINSAW =

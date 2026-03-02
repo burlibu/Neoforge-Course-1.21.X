@@ -43,6 +43,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(ModItems.BLACK_OPAL.get());
         basicItem(ModItems.RAW_BLACK_OPAL.get());
+        basicItem(ModItems.SPICE.get());
         basicItem(ModItems.CHAINSAW.get());
         basicItem(ModItems.TOMATO.get());
         basicItem(ModItems.FROSTFIRE_ICE.get());

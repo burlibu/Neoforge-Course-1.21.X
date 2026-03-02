@@ -81,6 +81,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.EBONY_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.EBONY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
+        // SPICE ORE - Add missing loot table
+        dropSelf(ModBlocks.SPICE_ORE_BLOCK.get());
+
         this.dropSelf(ModBlocks.PETUNIA.get());
         this.add(ModBlocks.POTTED_PETUNIA.get(), createPotFlowerItemTable(ModBlocks.PETUNIA));
     }

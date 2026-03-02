@@ -1,6 +1,7 @@
 {
   "item.mccourse.black_opal": "Black Opal",
   "item.mccourse.raw_black_opal": "Raw Black Opal",
+  "item.mccourse.spice": "Spice",
   "item.mccourse.chainsaw": "Chainsaw",
   "item.mccourse.tomato": "Tomato",
   "item.mccourse.frostfire_ice": "Frostfire Ice",
@@ -38,6 +39,8 @@
   "block.mccourse.black_opal_door": "Black Opal Door",
   "block.mccourse.black_opal_trapdoor": "Black Opal Trapdoor",
   "block.mccourse.black_opal_lamp": "Black Opal Lamp",
+  "block.mccourse.spice_ore_block": "Spice Ore Block",
+
 
   "block.mccourse.tomato_crop": "Tomato Crop",
   "block.mccourse.petunia": "Petunia",
