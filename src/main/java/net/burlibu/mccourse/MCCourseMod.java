@@ -14,6 +14,7 @@ import net.burlibu.mccourse.item.ModCreativeModeTabs;
 import net.burlibu.mccourse.item.ModItems;
 import net.burlibu.mccourse.potion.ModPotions;
 import net.burlibu.mccourse.sound.ModSounds;
+import net.burlibu.mccourse.block.entity.ModBlockEntities;
 import net.burlibu.mccourse.util.ModItemProperties;
 import net.burlibu.mccourse.villager.ModVillagers;
 import net.minecraft.client.renderer.BiomeColors;
@@ -62,6 +63,7 @@ public class MCCourseMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+    ModBlockEntities.register(modEventBus);
         ModArmorMaterials.register(modEventBus);
         ModDataComponentTypes.register(modEventBus);
         ModSounds.register(modEventBus);
