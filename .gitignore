@@ -22,6 +22,8 @@ eclipse
 run
 runs
 run-data
+.idea/
+.vscode/
 
-repo
+# repo
 src/generated/
