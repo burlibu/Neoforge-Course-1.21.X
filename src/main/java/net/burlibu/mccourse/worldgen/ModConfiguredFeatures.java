@@ -74,8 +74,22 @@ public class ModConfiguredFeatures {
                         true, UniformInt.of(3, 8),
                         UniformInt.of(2, 6), UniformInt.of(1, 2),
                         -18, 18, 0.075D, 1));
-        register(context, SPICE_ORE_BLOCK_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
-                ModBlocks.SPICE_ORE_BLOCK.get().defaultBlockState(), 9));
+
+        // SPICE ORE BLOCK
+
+        // 1. Crea le regole per identificare i blocchi (Sia Sandstone che Sabbia normale)
+        RuleTest sandstoneReplaceables = new BlockMatchTest(Blocks.SANDSTONE);
+        RuleTest sandReplaceables = new BlockMatchTest(Blocks.SAND); // Aggiunto per la sabbia
+
+        // 2. Inserisci entrambi i bersagli nella lista
+        List<OreConfiguration.TargetBlockState> spiceOreTargets = List.of(
+                OreConfiguration.target(sandstoneReplaceables, ModBlocks.SPICE_ORE_BLOCK.get().defaultBlockState()),
+                OreConfiguration.target(sandReplaceables, ModBlocks.SPICE_ORE_BLOCK.get().defaultBlockState()), // Sostituisce la sabbia
+                OreConfiguration.target(stoneReplaceables, ModBlocks.SPICE_ORE_BLOCK.get().defaultBlockState())
+        );
+
+        // 3. Registra la feature con la nuova lista aggiornata
+        register(context, SPICE_ORE_BLOCK_KEY, Feature.ORE, new OreConfiguration(spiceOreTargets, 9));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -49,7 +49,7 @@ public class ModPlacedFeatures {
 
         register(context, SPICE_ORE_BLOCK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SPICE_ORE_BLOCK_KEY),
                 ModOrePlacements.commonOrePlacement(12,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(48), VerticalAnchor.absolute(63))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(48), VerticalAnchor.absolute(80))));
     }
 
 

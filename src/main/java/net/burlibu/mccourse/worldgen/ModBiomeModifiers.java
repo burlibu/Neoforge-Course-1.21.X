@@ -60,7 +60,7 @@ public class ModBiomeModifiers {
         context.register(ADD_SPICE_ORE_BLOCK, new BiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.DESERT)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SPICE_ORE_BLOCK_PLACED_KEY)),
-                GenerationStep.Decoration.LOCAL_MODIFICATIONS));
+                GenerationStep.Decoration.UNDERGROUND_ORES)); // prima era LOCAL_MODIFICATIONS
     }
 
 
