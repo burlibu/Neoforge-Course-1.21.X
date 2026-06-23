@@ -24,6 +24,7 @@ runs
 run-data
 .idea/
 .vscode/
+launch.json
 
 # repo
 src/generated/

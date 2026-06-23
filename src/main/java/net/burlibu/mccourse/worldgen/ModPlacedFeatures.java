@@ -23,6 +23,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> END_BLACK_OPAL_ORE_PLACED_KEY = registerKey("end_black_opal_ore_placed");
     public static final ResourceKey<PlacedFeature> PETUNIA_PLACED_KEY = registerKey("petunia_placed");
     public static final ResourceKey<PlacedFeature> BLACK_OPAL_GEODE_PLACED_KEY = registerKey("black_opal_geode_placed");
+    public static final ResourceKey<PlacedFeature> SPICE_ORE_BLOCK_PLACED_KEY = registerKey("spice_ore_block_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -45,7 +46,12 @@ public class ModPlacedFeatures {
                 List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
                         HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(100)),
                         BiomeFilter.biome()));
+
+        register(context, SPICE_ORE_BLOCK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SPICE_ORE_BLOCK_KEY),
+                ModOrePlacements.commonOrePlacement(12,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(48), VerticalAnchor.absolute(63))));
     }
+
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID, name));

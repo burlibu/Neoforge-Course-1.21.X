@@ -34,6 +34,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> EBONY_KEY = registerKey("ebony");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PETUNIA_KEY = registerKey("petunia");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLACK_OPAL_GEODE_KEY = registerKey("black_opal_geode");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SPICE_ORE_BLOCK_KEY = registerKey("spice_ore_block");
 
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
@@ -73,6 +74,8 @@ public class ModConfiguredFeatures {
                         true, UniformInt.of(3, 8),
                         UniformInt.of(2, 6), UniformInt.of(1, 2),
                         -18, 18, 0.075D, 1));
+        register(context, SPICE_ORE_BLOCK_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
+                ModBlocks.SPICE_ORE_BLOCK.get().defaultBlockState(), 9));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
