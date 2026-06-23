@@ -53,6 +53,32 @@ public class ModOverworldBiomes {
                 .mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
     }
 
+    public static Biome spiceBadlands(HolderGetter<PlacedFeature> placedFeatureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder, 30);
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(placedFeatureGetter, carverGetter);
+        // Usiamo i carver e i laghi standard del deserto/badlands
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(false) // Niente pioggia nelle Badlands
+                .temperature(2.0F)      // Molto caldo
+                .downfall(0.0F)
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(4159204)       // Acqua classica delle badlands
+                        .waterFogColor(329011)
+                        .fogColor(12638463)
+                        .skyColor(calculateSkyColor(2.0F))
+                        .foliageColorOverride(10387532) //!
+                        .grassColorOverride(9470285).build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .generationSettings(biomeBuilder.build()).build();
+    }
+
     protected static int calculateSkyColor(float temperature) {
         float $$1 = temperature / 3.0F;
         $$1 = Mth.clamp($$1, -1.0F, 1.0F);

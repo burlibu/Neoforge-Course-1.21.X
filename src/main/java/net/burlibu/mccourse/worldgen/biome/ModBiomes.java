@@ -15,6 +15,7 @@ public class ModBiomes {
     public static final ResourceKey<Biome> KAUPEN_VALLEY = registerBiomeKey("kaupen_valley");
     public static final ResourceKey<Biome> GLOWSTONE_PLAIN = registerBiomeKey("glowstone_plain");
     public static final ResourceKey<Biome> END_ROT = registerBiomeKey("end_rot");
+    public static final ResourceKey<Biome> SPICE_BADLANDS = registerBiomeKey("spice_badlands");
 
     public static void registerBiomes() {
         Regions.register(new OverworldRegion(ResourceLocation.fromNamespaceAndPath(MCCourseMod.MOD_ID, "mccourse_overworld"), 20));
@@ -30,6 +31,7 @@ public class ModBiomes {
         register(context, KAUPEN_VALLEY, ModOverworldBiomes.kaupenValley(placedFeatures, carver));
         register(context, GLOWSTONE_PLAIN, ModNetherBiomes.glowstonePlains(placedFeatures, carver));
         register(context, END_ROT, ModEndBiomes.endRot(placedFeatures, carver));
+        register(context, SPICE_BADLANDS, ModOverworldBiomes.spiceBadlands(placedFeatures, carver));
     }
 
 
