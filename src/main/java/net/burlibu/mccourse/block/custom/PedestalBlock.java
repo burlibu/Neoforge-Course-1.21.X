@@ -72,7 +72,7 @@ public class PedestalBlock extends BaseEntityBlock {
                 pedestalBlockEntity.setItem(0, pStack);
                 pStack.shrink(1);
                 pLevel.playSound(pPlayer, pPos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
-            } else if(pStack.isEmpty()) {
+            } else if(pStack.isEmpty() && !pedestalBlockEntity.isEmpty()) {
                 ItemStack stackOnPedestal = pedestalBlockEntity.getItem(0);
                 pPlayer.setItemInHand(InteractionHand.MAIN_HAND, stackOnPedestal);
                 pedestalBlockEntity.clearContent();
