@@ -1,6 +1,7 @@
 package net.burlibu.mccourse;
 
 import net.burlibu.mccourse.block.ModBlocks;
+import net.burlibu.mccourse.block.entity.renderer.PedestalBlockEntityRenderer;
 import net.burlibu.mccourse.component.ModDataComponentTypes;
 import net.burlibu.mccourse.effect.ModEffects;
 import net.burlibu.mccourse.worldgen.biome.ModBiomes;
@@ -23,6 +24,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import org.slf4j.Logger;
@@ -159,7 +161,10 @@ public class MCCourseMod {
         }
 
 
-
+        @SubscribeEvent
+        public static void registerBlockEntityRendere(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
+        }
     }
 
 }
