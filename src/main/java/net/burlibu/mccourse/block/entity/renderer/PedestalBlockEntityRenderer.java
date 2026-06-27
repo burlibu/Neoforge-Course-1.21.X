@@ -1,5 +1,24 @@
 package net.burlibu.mccourse.block.entity.renderer;
-
+//! aaaaaaaaaa
+//+ aaaaaaaaa
+//* Juicy
+//^ AAAAAA
+//Region
+//why
+//future
+//todo
+//end
+//deprecated
+//£ aaaaaaaaaaaaaaaaaaa
+//& aaaaaaaaaaaaaaaaaa
+//$ aaaaaaaaaaaaaaaaaa
+//SECURITY
+//FIXME
+//BUG
+//HACK
+//% aaa
+//DONT USE
+//>           a
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.burlibu.mccourse.block.entity.custom.PedestalBlockEntity;
@@ -30,7 +49,7 @@ public class PedestalBlockEntityRenderer implements BlockEntityRenderer<Pedestal
         pPoseStack.pushPose();
         pPoseStack.translate(0.5f, 1.15f, 0.5f);
         pPoseStack.scale(3.0f, 5.0f, 10.0f);
-        pPoseStack.mulPose(Axis.YP.rotationDegrees(pBlockEntity.getRenderingRotation()));
+        pPoseStack.mulPose(Axis.YP.rotationDegrees(pBlockEntity.getGlobalRenderingRotation())); /*! prima era getGlobalRenderingRotation() */
 
         itemRenderer.renderStatic(stack, ItemDisplayContext.FIXED, getLightLevel(pBlockEntity.getLevel(),
                 pBlockEntity.getBlockPos()), OverlayTexture.NO_OVERLAY, pPoseStack, pBufferSource, pBlockEntity.getLevel(), 1);

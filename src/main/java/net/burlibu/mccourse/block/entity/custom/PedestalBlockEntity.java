@@ -94,6 +94,17 @@ public class PedestalBlockEntity extends BlockEntity implements Container {
         }
         return rotation;
     }
+    // use this if you want simultaneous rotation of all pedestals
+    public float getGlobalRenderingRotation() {
+        long time = 0;
+        try {
+          time = level.getGameTime(); // Get the world time
+        } catch (Exception e) {
+            time = 0;
+        }
+        float speedMultiplier = .5f; // Adjust this value to control speed, where 1.0f is normal speed
+        return (time * speedMultiplier) % 360;
+    }
 
     @Nullable
     @Override
