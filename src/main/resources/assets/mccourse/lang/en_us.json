@@ -97,5 +97,8 @@
 
   "block.mccourse.ebony_sapling": "Ebony Sapling",
   "block.mccourse.petunia": "Petunia",
-  "block.mccourse.potted_petunia": "Potted Petunia"
+  "block.mccourse.potted_petunia": "Potted Petunia",
+
+  "itemGroup.mccourse.black_opal_blocks_tab": "Black Opal Blocks",
+  "blockentity.mccourse.pedestal": "Pedestal"
 }

@@ -4,6 +4,8 @@ import net.burlibu.mccourse.block.ModBlocks;
 import net.burlibu.mccourse.block.entity.renderer.PedestalBlockEntityRenderer;
 import net.burlibu.mccourse.component.ModDataComponentTypes;
 import net.burlibu.mccourse.effect.ModEffects;
+import net.burlibu.mccourse.screen.ModMenuTypes;
+import net.burlibu.mccourse.screen.custom.PedestalScreen;
 import net.burlibu.mccourse.worldgen.biome.ModBiomes;
 import net.burlibu.mccourse.worldgen.biome.ModSurfaceRules;
 import net.burlibu.mccourse.enchantment.ModEnchantmentEffects;
@@ -26,6 +28,7 @@ import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import org.slf4j.Logger;
 import terrablender.api.SurfaceRuleManager;
@@ -65,7 +68,7 @@ public class MCCourseMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-    ModBlockEntities.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModArmorMaterials.register(modEventBus);
         ModDataComponentTypes.register(modEventBus);
         ModSounds.register(modEventBus);
@@ -75,6 +78,7 @@ public class MCCourseMod {
         ModFluidTypes.register(modEventBus);
         ModFluids.register(modEventBus);
         ModEnchantmentEffects.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
@@ -164,6 +168,11 @@ public class MCCourseMod {
         @SubscribeEvent
         public static void registerBlockEntityRendere(EntityRenderersEvent.RegisterRenderers event) {
             event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
         }
     }
 
