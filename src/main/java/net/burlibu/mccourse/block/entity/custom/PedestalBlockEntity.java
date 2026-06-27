@@ -112,4 +112,26 @@ public class PedestalBlockEntity extends BlockEntity implements MenuProvider {
     public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
         return saveWithoutMetadata(pRegistries);
     }
+
+    //% TEST
+
+    protected void onContentsChanged(int slot) {
+        setChanged();
+
+        if (level != null && !level.isClientSide()) {
+            // Notify neighbors for comparator updates
+            level.updateNeighbourForOutputSignal(worldPosition, getBlockState().getBlock());
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+        }
+    }
+    /**
+     * Returns comparator signal strength from 0 to 15
+     */
+    public int getComparatorSignal() {
+        ItemStack stack = inventory.getStackInSlot(0); // 1-slot inventory
+        if (stack.isEmpty()) return 0;
+
+        // Scale signal by how full the stack is (max 15)
+        return Math.min(15, (int) Math.ceil(stack.getCount() / (float) stack.getMaxStackSize() * 15));
+    }
 }

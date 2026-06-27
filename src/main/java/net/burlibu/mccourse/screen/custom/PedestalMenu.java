@@ -3,6 +3,7 @@ package net.burlibu.mccourse.screen.custom;
 import net.burlibu.mccourse.block.ModBlocks;
 import net.burlibu.mccourse.block.entity.custom.PedestalBlockEntity;
 import net.burlibu.mccourse.screen.ModMenuTypes;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -12,27 +13,75 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
 public class PedestalMenu extends AbstractContainerMenu {
     public final PedestalBlockEntity blockEntity;
     private final Level level;
 
-    public PedestalMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()));
-    }
 
-    public PedestalMenu(int pContainerId, Inventory inv, BlockEntity blockEntity) {
-        super(ModMenuTypes.PEDESTAL_MENU.get(), pContainerId);
-        this.blockEntity = ((PedestalBlockEntity) blockEntity);
+
+    //* Costruttore originale
+//    public PedestalMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
+//        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()));
+//    }
+
+    //* Costruttore originale
+
+    //    public PedestalMenu(int pContainerId, Inventory inv, BlockEntity blockEntity) {
+//        super(ModMenuTypes.PEDESTAL_MENU.get(), pContainerId);
+//        this.blockEntity = ((PedestalBlockEntity) blockEntity);
+//        this.level = inv.player.level();
+//
+//        addPlayerInventory(inv);
+//        addPlayerHotbar(inv);
+//
+//        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 80, 35));
+//    }
+    //% TEST
+    public PedestalMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
+        this(containerId, inv, (extraData == null) ? null : inv.player.level().getBlockEntity(extraData.readBlockPos()));
+    }
+    public PedestalMenu(int containerId, Inventory inv, BlockEntity entity) {
+        super(ModMenuTypes.PEDESTAL_MENU.get(), containerId);
+        boolean spectator = inv.player.isSpectator();
+
+        if (spectator || !(entity instanceof PedestalBlockEntity)) {
+            this.blockEntity = null;
+        } else {
+            this.blockEntity = (PedestalBlockEntity) entity;
+        }
+
         this.level = inv.player.level();
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 80, 35));
+        if (!spectator && this.blockEntity != null) {
+            this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 80, 35));
+        }
+    }
+    @Override
+    public boolean stillValid(Player player) {
+        return blockEntity != null && stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), player, ModBlocks.PEDESTAL.get());
     }
 
+    //TODO figure out where to call this
+    public boolean hasAnalogOutputSignal(BlockState state) {
+        return true; // lets comparators query this block
+    }
+
+
+    //TODO figure out where to call this
+    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
+        BlockEntity blockEntity = level.getBlockEntity(pos);
+        if (blockEntity instanceof PedestalBlockEntity pedestal) {
+            return pedestal.getComparatorSignal(); // 0-15
+        }
+        return 0;
+    }
+    //% TEST END
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
     // must assign a slot number to each of the slots used by the GUI.
     // For this container, we can see both the tile inventory's slots as well as the player inventory slots and the hotbar.
@@ -82,12 +131,12 @@ public class PedestalMenu extends AbstractContainerMenu {
         sourceSlot.onTake(playerIn, sourceStack);
         return copyOfSourceStack;
     }
-
-    @Override
-    public boolean stillValid(Player pPlayer) {
-        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, ModBlocks.PEDESTAL.get());
-    }
+        //* metodo originale
+//    @Override
+//    public boolean stillValid(Player pPlayer) {
+//        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
+//                pPlayer, ModBlocks.PEDESTAL.get());
+//    }
 
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
