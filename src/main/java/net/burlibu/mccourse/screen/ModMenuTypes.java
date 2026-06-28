@@ -1,6 +1,7 @@
 package net.burlibu.mccourse.screen;
 
 import net.burlibu.mccourse.MCCourseMod;
+import net.burlibu.mccourse.screen.custom.CrystallizerMenu;
 import net.burlibu.mccourse.screen.custom.PedestalMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -18,6 +19,8 @@ public class ModMenuTypes {
     public static final DeferredHolder<MenuType<?>, MenuType<PedestalMenu>> PEDESTAL_MENU =
             registerMenuType("pedestal_menu", PedestalMenu::new);
 
+    public static final DeferredHolder<MenuType<?>, MenuType<CrystallizerMenu>> CRYSTALLIZER_MENU =
+            registerMenuType("crystallizer_menu", CrystallizerMenu::new);
 
     private static <T extends AbstractContainerMenu> DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name,
                                                                                                                IContainerFactory<T> factory) {

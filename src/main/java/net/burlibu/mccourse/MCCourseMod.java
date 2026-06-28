@@ -5,6 +5,7 @@ import net.burlibu.mccourse.block.entity.renderer.PedestalBlockEntityRenderer;
 import net.burlibu.mccourse.component.ModDataComponentTypes;
 import net.burlibu.mccourse.effect.ModEffects;
 import net.burlibu.mccourse.screen.ModMenuTypes;
+import net.burlibu.mccourse.screen.custom.CrystallizerScreen;
 import net.burlibu.mccourse.screen.custom.PedestalScreen;
 import net.burlibu.mccourse.worldgen.biome.ModBiomes;
 import net.burlibu.mccourse.worldgen.biome.ModSurfaceRules;
@@ -173,6 +174,7 @@ public class MCCourseMod {
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event) {
             event.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
+            event.register(ModMenuTypes.CRYSTALLIZER_MENU.get(), CrystallizerScreen::new);
         }
     }
 
